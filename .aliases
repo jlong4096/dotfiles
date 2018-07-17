@@ -1,0 +1,6 @@
+alias ls="ls -GF"
+
+alias rsync-copy="rsync -avzhP"
+alias rsync-move="rsync -avzhP  --remove-source-files"
+alias rsync-update="rsync -avzuhP"
+alias rsync-sync="rsync -avzuhP --delete"
