@@ -12,6 +12,7 @@ symlink .hyper.js
 symlink .aliases
 symlink .zshrc
 symlink .vimrc
+symlink .ideavimrc
 symlink .bash_profile
 
 ln -svf $PWD/prompt/common.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/common.zsh-theme
