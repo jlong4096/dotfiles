@@ -3,6 +3,8 @@ symlink() {
 }
 
 echo "Script should be run as source; ie, 'source ./install.sh'"
+echo "apt install fonts-firacode curl zsh"
+echo "chsh; /bin/zsh"
 
 if [[ ! -d ${ZSH:-~/.oh-my-zsh} ]]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -15,6 +17,8 @@ symlink .vimrc
 symlink .ideavimrc
 symlink .bash_profile
 
+mkdir -p ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes
+mkdir -p ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins
 ln -svf $PWD/prompt/common.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/common.zsh-theme
 
 if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]]; then
