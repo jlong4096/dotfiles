@@ -22,7 +22,7 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Access and read vim config file.
-nnoremap <leader>ev :e $MYVIMRC<CR>
+nnoremap <leader>ev :e $HOME/.vimrc<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
 
 " Auto close certain delimiters.
@@ -34,7 +34,7 @@ nnoremap <leader>sv :so $MYVIMRC<CR>
 " ino {<CR> {<CR>}<ESC>O
 " ino {;<CR> {<CR>};<ESC>O
 " ino {,<CR> {<CR>};<ESC>O
-
+"
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
