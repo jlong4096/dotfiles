@@ -104,6 +104,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export GIT_EDITOR=vim
+
 source $HOME/.env_vars
 
 # Aliases
