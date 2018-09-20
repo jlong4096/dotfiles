@@ -88,6 +88,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -106,8 +107,7 @@ source $ZSH/oh-my-zsh.sh
 
 export GIT_EDITOR=vim
 
-source $HOME/.env_vars
-
 # Aliases
-source $HOME/.aliases
 
+source $HOME/.aliases
+source $HOME/.env_vars

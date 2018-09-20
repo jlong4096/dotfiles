@@ -1,7 +1,7 @@
 # vim: filetype=sh
 
 # Prompt symbol
-COMMON_PROMPT_SYMBOL="❯"
+COMMON_PROMPT_SYMBOL=">"
 
 # Left Prompt
 PROMPT='$(common_host)$(common_current_dir)$(common_bg_jobs)$(common_return_status)'

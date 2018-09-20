@@ -8,12 +8,7 @@ parse_k8s_cluster() {
 }
 
 export PS1="\w \[\033[01;34m\]$(parse_k8s_cluster)\[\033[01;31m\]\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
-
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
-
 export GIT_EDITOR=vim
 
-source $HOME/.env_vars
 source $HOME/.aliases
-
+source $HOME/.env_vars
