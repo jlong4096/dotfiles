@@ -1,10 +1,8 @@
 set number
-
 " Set up tab stops
 set tabstop=2
 set shiftwidth=2
 set expandtab
-" autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 " Save .swp files to a temp dir.  Note:  Won't create lock for multiple users
 set directory^=$HOME/.vim/tmp//
@@ -48,6 +46,7 @@ Plug 'posva/vim-vue'
 Plug 'derekwyatt/vim-scala'
 Plug 'ekalinin/dockerfile.vim'
 " Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-haml'
 call plug#end()
 
 " Enable the list of buffers
