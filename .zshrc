@@ -111,3 +111,5 @@ export GIT_EDITOR=vim
 
 source $HOME/.aliases
 source $HOME/.env_vars
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

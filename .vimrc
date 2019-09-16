@@ -1,10 +1,10 @@
 set number
 
 " Set up tab stops
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
-autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+" autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 " Save .swp files to a temp dir.  Note:  Won't create lock for multiple users
 set directory^=$HOME/.vim/tmp//
