@@ -1,4 +1,5 @@
 set number
+
 " Set up tab stops
 set tabstop=2
 set shiftwidth=2
@@ -23,29 +24,18 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 nnoremap <leader>ev :e $HOME/.vimrc<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
 
-" Auto close certain delimiters.
-" ino " ""<left>
-" ino ' ''<left>
-" ino ( ()<left>
-" ino [ []<left>
-" ino { {}<left>
-" ino {<CR> {<CR>}<ESC>O
-" ino {;<CR> {<CR>};<ESC>O
-" ino {,<CR> {<CR>};<ESC>O
-"
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
-Plug 'derekwyatt/vim-scala'
 Plug 'ekalinin/dockerfile.vim'
-" Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-haml'
 call plug#end()
 

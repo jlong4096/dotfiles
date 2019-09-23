@@ -3,7 +3,7 @@ symlink() {
 }
 
 echo "Script should be run as source; ie, 'source ./install.sh'"
-echo "apt install fonts-firacode curl zsh neovim"
+echo "apt install fonts-firacode curl zsh neovim kitty"
 echo "chsh; /bin/zsh"
 echo ""
 
@@ -21,7 +21,6 @@ if [[ ! -e ~/.local/share/nvim/site/autoload/plug.vim ]]; then
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-symlink .hyper.js
 symlink .aliases
 symlink .zshrc
 symlink .vimrc
@@ -35,6 +34,9 @@ ln -svf $PWD/prompt/common.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/c
 mkdir -p ~/.config/nvim
 ln -svf $PWD/.config/nvim/init.vim ~/.config/nvim/init.vim
 ln -svf $PWD/.vimrc ~/.config/nvim/rc.vim
+
+mkdir -p ~/.config/kitty
+ln -svf $PWD/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 
 if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
