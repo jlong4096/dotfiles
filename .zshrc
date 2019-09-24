@@ -1,5 +1,7 @@
+export ZSH_TMUX_AUTOSTART=true
+
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -71,6 +73,8 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   history-substring-search
+  sudo
+  tmux
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -105,11 +109,9 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export GIT_EDITOR=vim
+export GIT_EDITOR=nvim
 
 # Aliases
 
 source $HOME/.aliases
 source $HOME/.env_vars
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
