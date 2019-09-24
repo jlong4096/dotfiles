@@ -51,3 +51,8 @@ let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_by_filename = 1
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git\|vendor\|jspm_config\|build\|bin\|stage'
+
+hi DiffAdd ctermfg=black ctermbg=green
+hi DiffChange ctermfg=black ctermbg=yellow
+hi DiffText ctermfg=black ctermbg=yellow
+hi DiffDelete ctermfg=white ctermbg=red
