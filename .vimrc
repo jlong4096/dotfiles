@@ -1,4 +1,8 @@
-set number
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set number relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter * set number norelativenumber
+augroup END
 
 " Set up tab stops
 set tabstop=2
@@ -24,16 +28,6 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 nnoremap <leader>ev :e $HOME/.vimrc<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
 
-" Auto close certain delimiters.
-" ino " ""<left>
-" ino ' ''<left>
-" ino ( ()<left>
-" ino [ []<left>
-" ino { {}<left>
-" ino {<CR> {<CR>}<ESC>O
-" ino {;<CR> {<CR>};<ESC>O
-" ino {,<CR> {<CR>};<ESC>O
-"
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -46,7 +40,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
 Plug 'derekwyatt/vim-scala'
 Plug 'ekalinin/dockerfile.vim'
-" Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-haml'
 call plug#end()
 

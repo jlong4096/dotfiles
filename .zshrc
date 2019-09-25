@@ -105,7 +105,7 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export GIT_EDITOR=vim
+export GIT_EDITOR=nvim
 
 # Aliases
 
