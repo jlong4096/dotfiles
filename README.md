@@ -1,7 +1,7 @@
 ### Setup
 
 ```sh
-$ apt install fonts-firacode curl zsh neovim
+$ apt install fonts-firacode curl zsh neovim kitty
 $ chsh	# Input /bin/zsh
 $ touch .env_vars
 $ # Do the following if not done automatically by apt.

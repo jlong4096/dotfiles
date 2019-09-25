@@ -32,13 +32,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
-Plug 'derekwyatt/vim-scala'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'tpope/vim-haml'
 call plug#end()
@@ -55,3 +55,8 @@ let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_by_filename = 1
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git\|vendor\|jspm_config\|build\|bin\|stage'
+
+hi DiffAdd ctermfg=black ctermbg=green
+hi DiffChange ctermfg=black ctermbg=yellow
+hi DiffText ctermfg=black ctermbg=yellow
+hi DiffDelete ctermfg=white ctermbg=red
