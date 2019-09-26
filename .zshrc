@@ -1,5 +1,3 @@
-export ZSH_TMUX_AUTOSTART=true
-
 # If you come from bash you might have to change your $PATH.
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
@@ -64,6 +62,7 @@ ZSH_THEME="common"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  extract
   git
   osx
   npm
@@ -75,6 +74,10 @@ plugins=(
   history-substring-search
   sudo
   tmux
+  vi-mode
+  yarn
+  wd
+  z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -129,6 +132,27 @@ export LESS_TERMCAP_ZV=$(tput rsubm)
 export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
 export GROFF_NO_SGR=1
+
+# Bindkeys
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+
+# This binds Ctrl-O to ranger-cd:
+function ranger-cd {
+    tempfile="$(mktemp -t tmp.XXXXXX)"
+    ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        cd -- "$(cat "$tempfile")"
+    fi
+    rm -f -- "$tempfile"
+}
+bindkey -s '^o' 'ranger-cd\n'
 
 # Aliases
 
