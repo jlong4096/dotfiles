@@ -66,7 +66,6 @@ plugins=(
   git
   osx
   npm
-  sublime
   kubectl
   docker
   zsh-autosuggestions
@@ -134,6 +133,10 @@ export LESS_TERMCAP_ZW=$(tput rsupm)
 export GROFF_NO_SGR=1
 
 # Bindkeys
+
+# History substring search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
