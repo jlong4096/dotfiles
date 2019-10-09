@@ -37,10 +37,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'posva/vim-vue'
-Plug 'ekalinin/dockerfile.vim'
-Plug 'tpope/vim-haml'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Enable the list of buffers
@@ -54,7 +51,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_by_filename = 1
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git\|vendor\|jspm_config\|build\|bin\|stage'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git\|vendor\|jspm_config\|build\|bin\|dist\|stage'
 
 hi DiffAdd ctermfg=black ctermbg=green
 hi DiffChange ctermfg=black ctermbg=yellow
