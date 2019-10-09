@@ -48,9 +48,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 noremap <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let g:ctrlp_map = '<C-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_by_filename = 1
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git\|vendor\|jspm_config\|build\|bin\|dist\|stage'
 
 hi DiffAdd ctermfg=black ctermbg=green

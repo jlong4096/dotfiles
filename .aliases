@@ -21,3 +21,4 @@ alias dcd="docker-compose down -v"
 alias dcps="docker-compose ps"
 
 alias tka="tmux kill-session -a"
+alias tas="tmux attach-session"
