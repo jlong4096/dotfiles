@@ -35,7 +35,7 @@ common_current_dir() {
 
 # Prompt symbol
 common_return_status() {
-  echo -n "%(?.%F{magenta}.%F{red})$COMMON_PROMPT_SYMBOL%f "
+  echo -n "%(?.%F{green}.%F{magenta})$COMMON_PROMPT_SYMBOL%f "
 }
 
 # Git status

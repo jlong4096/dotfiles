@@ -68,15 +68,15 @@ plugins=(
   npm
   kubectl
   docker
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  history-substring-search
   sudo
   tmux
   vi-mode
   yarn
   wd
   z
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -131,6 +131,8 @@ export LESS_TERMCAP_ZV=$(tput rsubm)
 export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
 export GROFF_NO_SGR=1
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
 
 # Bindkeys
 
