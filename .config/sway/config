@@ -51,6 +51,7 @@ bindswitch lid:off output $laptop enable
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 set $lock swaylock \
+            -f \
             --screenshots \
             --clock \
             --indicator \
@@ -94,6 +95,28 @@ input "1739:30383:DLL075B:01_06CB:76AF_Touchpad" {
   natural_scroll disabled
 }
 
+# Nag configuration
+#
+
+set $nag exec swaynagmode
+mode "nag" {
+  bindsym {
+    Ctrl+d    mode "default"
+    Ctrl+c    $nag --exit
+    q         $nag --exit
+    Escape    $nag --exit
+    Return    $nag --confirm
+    Tab       $nag --select prev
+    Shift+Tab $nag --select next
+    Left      $nag --select next
+    Right     $nag --select prev
+    Up        $nag --select next
+    Down      $nag --select prev
+  }
+}
+
+swaynag_command $nag -R
+
 ### Key bindings
 #
 # Basics:
@@ -118,7 +141,7 @@ input "1739:30383:DLL075B:01_06CB:76AF_Touchpad" {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e $nag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
     bindsym $mod+Shift+q exec $lock
 #
@@ -240,36 +263,21 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
+    # swaybar_command waybar
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    status_command i3status
 
     colors {
-        statusline #ffffff
-        background #323232
+        statusline #d9e6f2
+        background #29262f
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
 
 include /etc/sway/config.d/*
 
-set $nag exec swaynagmode
-mode "nag" {
-  bindsym {
-    Ctrl+d    mode "Default"
-    Ctrl+c    $nag --exit
-    q         $nag --exit
-    Escape    $nag --exit
-    Return    $nag --confirm
-    Tab       $nag --select prev
-    Shift+Tab $nag --select next
-    Left      $nag --select next
-    Right     $nag --select prev
-    Up        $nag --select next
-    Down      $nag --select prev
-  }
-}
-
-swaynag_command swaynagmode
-xwayland disable
+# xwayland disable
+exec redshift
