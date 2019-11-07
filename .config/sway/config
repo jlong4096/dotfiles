@@ -280,4 +280,4 @@ bar {
 include /etc/sway/config.d/*
 
 # xwayland disable
-exec redshift
+exec redshift > /dev/null 2>&1
