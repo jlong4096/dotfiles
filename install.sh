@@ -44,8 +44,14 @@ ln -svf $PWD/.config/sway/config ~/.config/sway/config
 mkdir -p ~/.config/ranger
 ln -svf $PWD/.config/ranger/rc.conf ~/.config/ranger/rc.conf
 
-mkdir -p ~.config/redshift
+mkdir -p ~/.config/redshift
 ln -svf $PWD/.config/redshift/redshift.conf ~/.config/redshift/redshift.conf
+
+mkdir -p ~/.config/yabai
+ln -svf $PWD/.config/yabai/yabairc ~/.config/yabai/yabairc
+
+mkdir -p ~/.config/skhd
+ln -svf $PWD/.config/skhd/skhdrc ~/.config/skhd/skhdrc
 
 if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
