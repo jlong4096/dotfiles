@@ -163,3 +163,7 @@ bindkey -s '^o' 'ranger-cd\n'
 
 source $HOME/.aliases
 source $HOME/.env_vars
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
