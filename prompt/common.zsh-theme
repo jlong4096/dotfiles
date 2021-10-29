@@ -1,5 +1,11 @@
 # vim: filetype=sh
 
+KUBE_PS1_PREFIX="["
+KUBE_PS1_SUFFIX="]"
+KUBE_PS1_DIVIDER="|"
+KUBE_PS1_SYMBOL_ENABLE="false"
+KUBE_PS1_CTX_COLOR="magenta"
+
 # Prompt symbol
 COMMON_PROMPT_SYMBOL=">"
 
@@ -7,7 +13,7 @@ COMMON_PROMPT_SYMBOL=">"
 PROMPT='$(common_host)$(common_current_dir)$(common_bg_jobs)$(common_return_status)'
 
 # Right Prompt
-RPROMPT='$(common_git_status)'
+RPROMPT='$(common_git_status)$(kube_ps1)'
 
 # Prompt with current SHA
 # PROMPT='$(common_host)$(common_current_dir)$(common_bg_jobs)$(common_return_status)'
@@ -58,13 +64,6 @@ common_git_status() {
     fi
 
     echo -n "${message}"
-}
-
-# k8 cluster
-common_k8_cluster() {
-    local cluster=$(kubectl config current-context 2> /dev/null | sed -e 's/\(.*\)\..*\..*$/\1/')
-
-    echo -n "%F{magenta}[${cluster}]%f "
 }
 
 # Git prompt SHA

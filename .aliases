@@ -17,7 +17,7 @@ alias drma="docker rm \$(docker ps -a -q)"
 alias drmi="docker rmi"
 alias drmia="docker rmi \$(docker images -q)"
 
-alias dcc="docker-compose"
+alias dcc="docker compose"
 
 alias tka="tmux kill-session -a"
 alias tas="tmux attach-session"
