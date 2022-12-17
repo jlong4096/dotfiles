@@ -44,6 +44,13 @@ common_return_status() {
   echo -n "%(?.%F{green}.%F{magenta})$COMMON_PROMPT_SYMBOL%f "
 }
 
+# common_docker_context() {
+#   local context=$(docker context ls | sed -E -n 's/^([-a-zA-Z0-9_]+) \*.*/\1/p')
+#   local message_color="%F{green}"
+#
+#   echo -n "${${message_color}${message}}"
+# }
+
 # Git status
 common_git_status() {
     local message=""

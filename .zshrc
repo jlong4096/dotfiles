@@ -64,7 +64,7 @@ ZSH_THEME="common"
 plugins=(
   extract
   git
-  osx
+  macos
   npm
   kubectl
   docker

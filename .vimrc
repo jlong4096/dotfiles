@@ -15,6 +15,9 @@ au Filetype proto setlocal noet ts=2 sw=2 sts=2
 
 " Save .swp files to a temp dir.  Note:  Won't create lock for multiple users
 set directory^=$HOME/.vim/tmp//
+" set clipboard=unnamedplus
+set foldmethod=manual
+set tags=tags
 
 " Cycle through buffers with tab
 nnoremap <Tab> :bnext<CR>
@@ -46,28 +49,31 @@ let g:vue_pre_processors=['scss', 'ts']
 let html_no_rendering=1 " vue files with self-closing tags cause syntax highlighting to fail
 
 call plug#begin('~/.vim/plugged')
-" Plug 'flazz/vim-colorschemes'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-abolish'
-" Plug 'tpope/vim-commentary'
-" Plug 'mhinz/vim-signify'
+" IDE plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+Plug 'jeffkreeftmeijer/vim-dim'
+Plug 'noahfrederick/vim-noctu'
+Plug 'whiteinge/diffconflicts'	" See readme for merge.tool instructions
+" Plug 'tpope/vim-fugitive'
+" Editor plugins
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-abolish'
 Plug 'AndrewRadev/splitjoin.vim'
-" Plug 'cakebaker/scss-syntax.vim'
-Plug 'posva/vim-vue'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tomtom/tcomment_vim'
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'romainl/vim-qf'
-" Plug 'vim-syntastic/syntastic'
+" Plug 'svermeulen/vim-easyclip'
+" Language plugins
+Plug 'posva/vim-vue'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
@@ -78,11 +84,7 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'majutsushi/tagbar'
-" Plug 'stephpy/vim-yaml'
 Plug 'sheerun/vim-polyglot' " Kept at end to not conflict with other languages
-Plug 'jeffkreeftmeijer/vim-dim'
-Plug 'noahfrederick/vim-noctu'
 call plug#end()
 
 let g:deoplete#enable_at_startup = 0
@@ -132,13 +134,17 @@ let g:go_metalinter_enabled = ['deadcode', 'errcheck', 'gosimple', 'govet', 'ine
 let g:go_metalinter_command="golangci-lint"
 
 noremap <C-n> :NERDTreeToggle<CR>
+noremap <leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git\|vendor\|jspm_config\|build\|bin\|dist\|stage'
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|vendor|jspm_config|build|bin|dist|stage|coverage)|(\.(swp|ico|git|svn|DS_Store))$'
+let g:ctrlp_working_path_mode = ''
 let g:ctrlp_root_markers = ['package.json', 'go.mod']
 let g:ctrlp_show_hidden = 1
+
+" nnoremap gm m
+" nmap M <Plug>MoveMotionEndOfLinePlug
 
 " hi DiffAdd ctermfg=black ctermbg=green
 " hi DiffChange ctermfg=black ctermbg=yellow
@@ -149,8 +155,6 @@ let g:prettier#exec_cmd_async = 1
 " let g:prettier#quickfix_enabled = 0
 " let g:prettier#autoformat = 0
 " autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-
-set tags=tags
 
 autocmd BufNewFile *.vue 0r $HOME/.vim/templates/skeleton.vue
 nnoremap <leader>vue :. !cat $HOME/.vim/templates/skeleton.vue<CR>
