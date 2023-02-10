@@ -75,6 +75,13 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 	dap.configurations[language] = {
 		{
 			type = "pwa-node",
+			request = "attach",
+			name = "Attach Debugger",
+			cwd = "${workspaceFolder}",
+			processId = "${command:pickProcess}",
+		},
+		{
+			type = "pwa-node",
 			request = "launch",
 			name = "Debug Jest Tests",
 			-- trace = true, -- include debugger info

@@ -80,5 +80,18 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	use({ "mhartington/formatter.nvim" })
+	use("mhartington/formatter.nvim")
+
+	use("github/copilot.vim")
+	use("hrsh7th/cmp-copilot")
+
+	-- use("zbirenbaum/copilot.lua")
+	--
+	-- use({
+	-- 	"zbirenbaum/copilot-cmp",
+	-- 	after = { "copilot.lua" },
+	-- 	config = function()
+	-- 		require("copilot_cmp").setup()
+	-- 	end,
+	-- })
 end)
