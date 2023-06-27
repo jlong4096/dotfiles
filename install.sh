@@ -11,15 +11,15 @@ if [[ ! -d ${ZSH:-~/.oh-my-zsh} ]]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-if [[ ! -e ~/.vim/autoload/plug.vim ]]; then
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-
-if [[ ! -e ~/.local/share/nvim/site/autoload/plug.vim ]]; then
-    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
+# if [[ ! -e ~/.vim/autoload/plug.vim ]]; then
+#     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+#         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# fi
+# 
+# if [[ ! -e ~/.local/share/nvim/site/autoload/plug.vim ]]; then
+#     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+#         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# fi
 
 symlink .aliases
 symlink .zshrc
@@ -32,20 +32,20 @@ mkdir -p ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins
 ln -svf $PWD/prompt/common.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/common.zsh-theme
 
 mkdir -p ~/.config/nvim
-ln -svf $PWD/.config/nvim/init.vim ~/.config/nvim/init.vim
-ln -svf $PWD/.vimrc ~/.config/nvim/rc.vim
+# ln -svf $PWD/.config/nvim/init.vim ~/.config/nvim/init.vim
+# ln -svf $PWD/.vimrc ~/.config/nvim/rc.vim
 
 mkdir -p ~/.config/kitty
 ln -svf $PWD/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 
-mkdir -p ~/.config/sway
-ln -svf $PWD/.config/sway/config ~/.config/sway/config
+# mkdir -p ~/.config/sway
+# ln -svf $PWD/.config/sway/config ~/.config/sway/config
 
-mkdir -p ~/.config/ranger
-ln -svf $PWD/.config/ranger/rc.conf ~/.config/ranger/rc.conf
+# mkdir -p ~/.config/ranger
+# ln -svf $PWD/.config/ranger/rc.conf ~/.config/ranger/rc.conf
 
-mkdir -p ~/.config/redshift
-ln -svf $PWD/.config/redshift/redshift.conf ~/.config/redshift/redshift.conf
+# mkdir -p ~/.config/redshift
+# ln -svf $PWD/.config/redshift/redshift.conf ~/.config/redshift/redshift.conf
 
 mkdir -p ~/.config/yabai
 ln -svf $PWD/.config/yabai/yabairc ~/.config/yabai/yabairc

@@ -8,7 +8,8 @@ return require("packer").startup(function(use)
 
 	use("tpope/vim-abolish")
 
-	use("mileszs/ack.vim")
+	-- use("mileszs/ack.vim")
+	use("jremmen/vim-ripgrep")
 
 	use("AndrewRadev/splitjoin.vim")
 
@@ -29,6 +30,10 @@ return require("packer").startup(function(use)
 		-- requires = { "kyazdani42/nvim-web-devicons", opt = true }
 	})
 
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+	})
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.0",
@@ -83,7 +88,7 @@ return require("packer").startup(function(use)
 	use("mhartington/formatter.nvim")
 
 	use("github/copilot.vim")
-	use("hrsh7th/cmp-copilot")
+	-- use("hrsh7th/cmp-copilot")
 
 	-- use("zbirenbaum/copilot.lua")
 	--

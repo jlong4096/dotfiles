@@ -69,7 +69,7 @@ plugins=(
   kubectl
   docker
   sudo
-  tmux
+  # tmux
   vi-mode
   yarn
   wd
@@ -77,9 +77,10 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   history-substring-search
+  aws
 )
 
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+# source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

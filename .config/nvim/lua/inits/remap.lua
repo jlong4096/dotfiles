@@ -3,6 +3,8 @@ vim.keymap.set("n", "<leader>sv", ":so $HOME/.config/nvim/init.lua<CR>")
 
 vim.keymap.set("n", "<Tab>", ":bnext<CR>")
 vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>")
+-- vim.keymap.set("n", "<leader>n", ":bnext<CR>")
+-- vim.keymap.set("n", "<leader>p", ":bprevious<CR>")
 
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")

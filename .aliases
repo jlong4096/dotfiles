@@ -1,4 +1,3 @@
-alias ctags=/usr/local/bin/ctags
 alias ls="ls -GF"
 
 alias rsync-copy="rsync -avzhP"

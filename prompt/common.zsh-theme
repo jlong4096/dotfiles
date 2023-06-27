@@ -13,7 +13,8 @@ COMMON_PROMPT_SYMBOL=">"
 PROMPT='$(common_host)$(common_current_dir)$(common_bg_jobs)$(common_return_status)'
 
 # Right Prompt
-RPROMPT='$(common_git_status)$(kube_ps1)'
+RPROMPT='$(common_git_status)$(common_aws_profile)'
+# RPROMPT='$(common_git_status)'
 
 # Prompt with current SHA
 # PROMPT='$(common_host)$(common_current_dir)$(common_bg_jobs)$(common_return_status)'
@@ -71,6 +72,12 @@ common_git_status() {
     fi
 
     echo -n "${message}"
+}
+
+common_aws_profile() {
+  if [[ $AWS_PROFILE ]]; then
+    echo "%{$fg[yellow]%}[$AWS_PROFILE]%{$reset_color%} "
+  fi
 }
 
 # Git prompt SHA
