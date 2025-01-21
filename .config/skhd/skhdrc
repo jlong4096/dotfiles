@@ -163,3 +163,6 @@ alt - p : yabai -m window --toggle float;\
 # change layout of desktop
 # ctrl + alt - z : yabai -m space --layout bsp
 # ctrl + alt - x : yabai -m space --layout float
+
+# rebalance windows (alt - equal)
+alt - 0x18 : yabai -m space --balance

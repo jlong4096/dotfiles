@@ -20,3 +20,5 @@ alias dcc="docker compose"
 
 alias tka="tmux kill-session -a"
 alias tas="tmux attach-session"
+
+alias awsl="aws --endpoint-url=http://localhost:4566"

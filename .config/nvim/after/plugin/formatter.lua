@@ -36,28 +36,39 @@ require("formatter").setup({
 			function()
 				return {
 					exe = "black",
-					args = { "-l", "110", "-q", "-" },
+					args = { "-l", "120", "-q", "-" },
 					stdin = true,
 				}
 			end,
 			function()
 				return {
 					exe = "isort",
-					args = { "--line-length=110", "-" },
+					args = { "--line-length=120", "--profile=black", "-" },
 					stdin = true,
 				}
 			end,
 			function()
 				return {
 					exe = "flake8",
-					args = { "--ignore=E501", "--stdin-display-name", vim.api.nvim_buf_get_name(0), "-" },
+					args = { "--ignore=E501,W503,E203", "-" },
 					stdin = true,
+				}
+			end,
+			function()
+				return {
+					exe = "mypy",
+					args = { "--ignore-missing-imports", vim.api.nvim_buf_get_name(0) },
+					stdin = false,
 				}
 			end,
 		},
 		-- python = {
 		-- 	require("formatter.filetypes.python").black,
 		-- },
+
+		cpp = {
+			require("formatter.filetypes.cpp").clangformat,
+		},
 
 		["*"] = {
 			require("formatter.filetypes.any").remove_trailing_whitespace,

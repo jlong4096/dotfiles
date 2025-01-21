@@ -13,7 +13,7 @@ COMMON_PROMPT_SYMBOL=">"
 PROMPT='$(common_host)$(common_current_dir)$(common_bg_jobs)$(common_return_status)'
 
 # Right Prompt
-RPROMPT='$(common_git_status)$(common_aws_profile)'
+RPROMPT='$(kube_ps1)$(common_git_status)$(common_aws_profile)'
 # RPROMPT='$(common_git_status)'
 
 # Prompt with current SHA

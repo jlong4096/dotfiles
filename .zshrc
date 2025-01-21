@@ -65,8 +65,8 @@ plugins=(
   extract
   git
   macos
-  npm
   kubectl
+  kube-ps1
   docker
   sudo
   # tmux
@@ -161,11 +161,43 @@ function ranger-cd {
 }
 bindkey -s '^o' 'ranger-cd\n'
 
+# First, we define how to categorize the files.
+zstyle ':completion:*' file-patterns '
+    *.js(D-^/*):js-files:"JS file"
+    *.d.ts(D-^/*):def-files:"TS Definition file"
+    *[^d].ts(D-^/*):ts-files:"TS file"
+    *(D-*):executables:"executable file"
+    *(D-/):directories:"directory"
+    ^*.(d.ts|js|ts)(D-^/*):files:"other file"
+'
+
+# Then, we define in what order they should appear.
+zstyle ':completion:*' group-order ts-files js-files def-files executables directories files
+
+# Finally, we need to enable group names, or the group order won't work.
+zstyle ':completion:*' group-name ''
+
 # Aliases
 
 source $HOME/.aliases
 source $HOME/.env_vars
 
+source $ZSH/custom/lazyshell.zsh
+
+nvm use v20.8
+
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+# Created by `pipx` on 2023-08-19 02:24:11
+export PATH="$PATH:/Users/jameslong/.local/bin"
+
+# bun completions
+[ -s "/Users/jameslong/.bun/_bun" ] && source "/Users/jameslong/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+
