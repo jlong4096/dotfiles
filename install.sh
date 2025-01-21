@@ -23,15 +23,19 @@ fi
 
 symlink .aliases
 symlink .zshrc
-symlink .vimrc
-symlink .ideavimrc
+# symlink .vimrc
+# symlink .ideavimrc
 symlink .bash_profile
 
 mkdir -p ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes
 mkdir -p ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins
 ln -svf $PWD/prompt/common.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/common.zsh-theme
 
-mkdir -p ~/.config/nvim
+ln -svf $PWD/.config/nvim ~/.config/nvim
+if [[ ! -e ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]]; then
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+fi
 # ln -svf $PWD/.config/nvim/init.vim ~/.config/nvim/init.vim
 # ln -svf $PWD/.vimrc ~/.config/nvim/rc.vim
 

@@ -182,22 +182,6 @@ zstyle ':completion:*' group-name ''
 source $HOME/.aliases
 source $HOME/.env_vars
 
-source $ZSH/custom/lazyshell.zsh
-
-nvm use v20.8
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-# Created by `pipx` on 2023-08-19 02:24:11
-export PATH="$PATH:/Users/jameslong/.local/bin"
-
-# bun completions
-[ -s "/Users/jameslong/.bun/_bun" ] && source "/Users/jameslong/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
