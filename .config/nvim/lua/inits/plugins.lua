@@ -69,7 +69,7 @@ return require("packer").startup(function(use)
 		},
 	})
 
-  use({ "mfussenegger/nvim-dap", requires = { "nvim-neotest/nvim-nio" } })
+	use({ "mfussenegger/nvim-dap", requires = { "nvim-neotest/nvim-nio" } })
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	use("theHamsta/nvim-dap-virtual-text")
 	use("leoluz/nvim-dap-go")
